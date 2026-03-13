@@ -1,5 +1,8 @@
 package com.example.lazy.countries;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class France implements Country {
 
     public France() {
