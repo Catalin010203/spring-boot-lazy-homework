@@ -4,10 +4,9 @@ import com.example.lazy.countries.France;
 import com.example.lazy.countries.Romania;
 import com.example.lazy.countries.Russia;
 import com.example.lazy.countries.UK;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
 
-public class RestControler {
+public class RestController {
 
     private France france;
     private Romania romania;
@@ -15,7 +14,7 @@ public class RestControler {
     private Russia russia;
 
 
-    public RestControler() {
+    public RestController() {
         System.out.println("In constructor: " + getClass().getName());
     }
 
