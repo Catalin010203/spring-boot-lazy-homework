@@ -1,7 +1,9 @@
 package com.example.lazy.control;
 
 import com.example.lazy.countries.*;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,11 +15,11 @@ public class Controller {
     private Country ukigndom;
     private Country fr;
 
-
-    public Controller(@Qualifier("france") Country country,
-                      @Qualifier("russia") Country country1,
-                      @Qualifier("UK") Country country2,
-                      @Qualifier("romania") Country country3) {
+    @Autowired
+    public Controller(@Lazy @Qualifier("france") Country country,
+                      @Lazy @Qualifier("russia") Country country1,
+                      @Lazy @Qualifier("UK") Country country2,
+                      @Lazy @Qualifier("romania") Country country3) {
         System.out.println("In constructor: " + getClass().getName());
         fr = country;
         ru = country1;
